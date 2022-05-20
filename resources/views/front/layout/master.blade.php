@@ -27,12 +27,25 @@
             <span class="header_right_block">
                 <div class="dropdown header_dropdown dropdown-desktop">
                     <button class="btn dropdown-toggle header_dropdown_btn" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
-                    az
+                    @if(app()->getLocale() == 'ru')
+                            RU
+                        @elseif(app()->getLocale() == 'az')
+                            AZ
+                        @elseif(app()->getLocale() == 'en')
+                            EN
+                        @endif
                     </button>
                     <ul class="dropdown-menu" name="select_lang" id="sel" aria-labelledby="dropdownMenuButton3">
-                        <li><a class="dropdown-item" >RU</a></li>
-                        <li><a class="dropdown-item" >AZ</a></li>
-                        <li><a class="dropdown-item" >EN</a></li>
+                        @if(app()->getLocale() == 'ru')
+                            <li><a class="dropdown-item" href="{{ route('lang.swithcher',['locale'=>'az']) }}" >AZ</a></li>
+                            <li><a class="dropdown-item" href="{{ route('lang.swithcher',['locale'=>'en']) }}" >EN</a></li>
+                        @elseif(app()->getLocale() == 'az')
+                            <li><a class="dropdown-item" href="{{ route('lang.swithcher',['locale'=>'ru']) }}" >RU</a></li>
+                            <li><a class="dropdown-item" href="{{ route('lang.swithcher',['locale'=>'en']) }}" >EN</a></li>
+                        @elseif(app()->getLocale() == 'en')
+                            <li><a class="dropdown-item" href="{{ route('lang.swithcher',['locale'=>'az']) }}" >AZ</a></li>
+                            <li><a class="dropdown-item" href="{{ route('lang.swithcher',['locale'=>'ru']) }}" >RU</a></li>
+                        @endif
                     </ul>
                 </div>
                 <div class="dropdown header_dropdown dropdown-desktop" id="sel">
@@ -124,224 +137,221 @@
     <div class="container">
         <section class="home_banner col-md-12 col-sm-12 col-12">
             <span class="b1_con col-md-6 col-sm-12 col-12">
-                <span class="b1_headert">İngilis dilinizi təkmilləşdirəcəyik</span>
-                <span class="b1_text">Əgər ingilis dilində səlis danışmaq istəyirsinizsə, lakin səviyyəniz “my name is” - dirsə, bizim kurs sizin üçündür :)</span>
-                <span class="b1_button"><button class="main_zapisatsa btn_yellow" onclick="zapisatsa1()">Qeydiyyatdan keçmək</button></span>
+                <span class="b1_headert">{!! __('home.ingilis_dilini_tekminlesdireciyik') !!}</span>
+                <span class="b1_text">{!! __('home.eger_ingilis_dilinde_selis_danismaq') !!}</span>
+                <span class="b1_button"><button class="main_zapisatsa btn_yellow" onclick="zapisatsa1()">{!! __('home.qeydiyyatdan_kecmek') !!}</button></span>
             </span>
             <span class="b1_girl col-md-6 col-sm-12 col-12"><img src="https://www.gospeak.az/img/girl.png"></span>
             <span class="b1_yleft"><img src="https://www.gospeak.az/img/yellow.svg"></span>
         </section>
         <section class="advantages">
-            <div class="b2_headert section_heading">Üstünlüklər</div>
+            <div class="b2_headert section_heading">{!! __('home.ustunlukler') !!}</div>
             <div class="b2_cards ">
                 <span class="b2_card ">
                     <div class="b2_img"><img src="{{ asset('template') }}/img/01.svg"></div>
                     <div class="b2_text_up">
-                        <span class="b2_text">Müəllif hüququ materialları</span>
+                        <span class="b2_text">{!! __('home.muellif_huququ_materiallari') !!}</span>
                     </div>
                 </span>
                 <span class="b2_card ">
                     <div class="b2_img"><img src="{{ asset('template') }}/img/02.svg"></div>
                     <div class="b2_text_up">
-                        <span class="b2_text">Sərfəli qiymət</span>
+                        <span class="b2_text">{!! __('home.serfeli_qiymet') !!}</span>
                     </div>
                 </span>
                 <span class="b2_card ">
                     <div class="b2_img"><img src="{{ asset('template') }}/img/03.svg"></div>
                     <div class="b2_text_up">
-                        <span class="b2_text">İstənilən yerdə və istənilən vaxt təhsil almaq imkanı</span>
+                        <span class="b2_text">{!! __('home.istenilen_yerde_ve_istenilen_vaxt') !!}</span>
                     </div>
                 </span>
                 <span class="b2_card ">
                     <div class="b2_img"><img src="{{ asset('template') }}/img/04.svg"></div>
                     <div class="b2_text_up">
-                        <span class="b2_text">Bütün bacarıqların intensiv şəkildə pompalanması </span>
+                        <span class="b2_text">{!! __('home.butun_bacariqlarin_intensiv_sekilde') !!} </span>
                     </div>
                 </span>
             </div>
         </section>
         <section class="about_courses">
             <div class="b2_headert section_heading">
-                Kurs haqqında
+                {!! __('home.kurs_haqqinda') !!}
             </div>
             <div class="about_items col-md-12 col-sm-12 col-12">
                 <div class="about_content col-lg-7 col-md-12 col-sm-12 col-12">
                     <span class="about_header">
-                        <h2>"Elementary"-dən "Intermediate"-a qədər</h2>
+                        <h2>{!! __('home.elementraryden_intermediate') !!}</h2>
                     </span>
-                    <span class="about_text">Hər bir tələbənin arzusu: hazır qeydlər, ixtisaslı mentorlar və digər bonuslardan ibarət kurs. Proqram bütün bacarıqları artırmaq üçün nəzərdə tutulmuşdur. Cəmi 30 gün ərzində dil maneəsi üzərində tam qələbə. </span>
+                    <span class="about_text">{!! __('home.her_bir_telebenin') !!}</span>
                     <div class="about_features">
-                        <span class="ab_feature"><img src="{{ asset('template') }}/img/time.svg"> 1 ay</span>
-                        <span class="ab_feature"><img src="{{ asset('template') }}/img/doc.svg"> 3 paket</span>
-                        <span class="ab_feature"><img src="{{ asset('template') }}/img/star.svg"> Fərdi yanaşma</span>
+                        <span class="ab_feature"><img src="{{ asset('template') }}/img/time.svg"> {!! __('home.kurshaqqinda_1_ay') !!}</span>
+                        <span class="ab_feature"><img src="{{ asset('template') }}/img/doc.svg"> {!! __('home.kurshaqqinda_3_paket') !!}</span>
+                        <span class="ab_feature"><img src="{{ asset('template') }}/img/star.svg"> {!! __('home.ferdi_yanasma') !!}</span>
                     </div>
                     <span class="about_btns">
-                        <button class="b3_zp about_signup btn_yellow" onclick="zapisatsa()">Qeydiyyatdan keçmək</button>
-                        <button class="b3_about about_info btn_white" onclick="about_course()">Ətraflı</button>
+                        <button class="b3_zp about_signup btn_yellow" onclick="zapisatsa()">{!! __('home.qeydiyyatdan_kecmek') !!}</button>
+                        <button class="b3_about about_info btn_white" onclick="about_course()">{!! __('home.etrafli') !!}</button>
                     </span>
                 </div>
                 <img class="about_img col-lg-5 col-md-12 col-sm-12 col-12" src="{{ asset('template') }}/img/b3_img.png">
             </div>
         </section>
         <section id="tariffs" class="tariffs">
-            <div class="b2_headert section_heading">Paketlər və qiymətlər</div>
+            <div class="b2_headert section_heading">{!! __('home.paketler_ve_qiymetler') !!}</div>
             <div class="tariff_items col-md-12 col-sm-12 col-12">
                 <div class="b5_con1 tariff_card col-md-12 col-sm-12 col-12" id="b5con1">
                     <div class="b5_con1t b5_content tariff_content" id="b5con1t">
-                        <div class="b5_content1_header tariff_header">BASIC</div>
-                        <span class="b5_1 b5_0 ">1 ay tədris</span>
-                        <span class="b5_2 b5_0">45+ video dərs</span>
-                        <span class="b5_3 b5_0">70+ materiallar</span>
-                        <span class="b5_4 b5_0">Ev tapşırığı <span class="red_highlight"> yoxlanışsız</span></span>
-                        <span class="b5_5 b5_0">Platformamızda şəxsi kabinet</span>
-                        <span class="b5_6 b5_0">Ümumi chat</span>
-                        <span class="b5_7 b5_0">Kursun gedişatını izləmək üçün iş dəftəri</span>
-                        <span class="b5_8 b5_0">MovieNights</span>
-                        <span class="b5_8 b5_0">Kursu bitirmə haqqında elektron sertifikat</span>
-                        <span class="b5_9 b5_0 b01">İnteraktivlərdə iştirak etmək imkanı</span>
-                        <span class="b5_10 b5_0 b01">Mentor dəstəyi</span>
-                        <span class="b5_11 b5_0 b01">SpeakingClub danışıq dərsləri</span>
-                        <span class="b5_12 b5_0 b01">Kursda olmayan mövzular üzrə 5 əlavə material</span>
-                        <span class="b5_13 b5_0 b01">Mentorla VIP söhbət</span>
-                        <span class="b5_14 b5_0 b01">Müəllimlə fərdi dərs</span>
+                        <div class="b5_content1_header tariff_header">{!! __('home.basic') !!}</div>
+                        <span class="b5_1 b5_0 ">{!! __('home.1_ay_tedris') !!}</span>
+                        <span class="b5_2 b5_0">{!! __('home.45_video_ders') !!}</span>
+                        <span class="b5_3 b5_0">{!! __('home.70_materiallar') !!}</span>
+                        <span class="b5_4 b5_0">{!! __('home.ev_tapsirigi_yoxlanissiz') !!}</span>
+                        <span class="b5_5 b5_0">{!! __('home.platformamizda_sexsi_kabinet') !!}</span>
+                        <span class="b5_6 b5_0">{!! __('home.umumi_chat') !!}</span>
+                        <span class="b5_7 b5_0">{!! __('home.kursun_gedisatini_izlemek') !!}</span>
+                        <span class="b5_8 b5_0">{!! __('home.movienights') !!}</span>
+                        <span class="b5_8 b5_0">{!! __('home.kursu_bitirme_haqqinda_elektron') !!}</span>
+                        <span class="b5_9 b5_0 b01">{!! __('home.interaktivde_istirak_etmek_imkani') !!}</span>
+                        <span class="b5_10 b5_0 b01">{!! __('home.mentor_desteyi') !!}</span>
+                        <span class="b5_11 b5_0 b01">{!! __('home.speakingclub_danisiq_dersleri') !!}</span>
+                        <span class="b5_12 b5_0 b01">{!! __('home.kursda_olmayan_movzular') !!}</span>
+                        <span class="b5_13 b5_0 b01">{!! __('home.mentorla_vip_sohbet') !!}</span>
+                        <span class="b5_14 b5_0 b01">{!! __('home.muellimle_ferdi_ders') !!}</span>
                         <span id="cena_basic" class="b5_15 b5_0"><span class="b5_15 b5_0"><span class="b5_16">59 AZN</span></span></span>
-                        <button class="b5_basic_btn btn_yellow tariff_btn" onclick="zapisatsa()">Almaq</button>
+                        <button class="b5_basic_btn btn_yellow tariff_btn" onclick="zapisatsa()">{!! __('home.almaq') !!}</button>
                     </div>
                 </div>
                 <div class="b5_con2 tariff_card col-md-12 col-sm-12 col-12 py-5" id="b5con2">
                     <div class="b5_con2t b5_content tariff_content" id="b5con2t">
-                        <div class="b5_content2_header tariff_header">STANDART<span class="tariff_mark"> Tövsiyə olunan paket</span></div>
-                        <span class="b5_1 b5_0 ">1 ay tədris</span>
-                        <span class="b5_2 b5_0">45+ video dərs</span>
-                        <span class="b5_3 b5_0"><span class="green_highlight">80+ </span>materiallar</span>
-                        <span class="b5_4 b5_0">Ev tapşırığı <span class="green_highlight"> yoxlanışla</span></span>
-                        <span class="b5_5 b5_0">Platformamızda şəxsi kabinet</span>
-                        <span class="b5_6 b5_0">Ümumi chat</span>
-                        <span class="b5_7 b5_0">Kursun gedişatını izləmək üçün iş dəftəri</span>
-                        <span class="b5_8 b5_0">MovieNights</span>
-                        <span class="b5_8 b5_0">Kursu bitirmə haqqında elektron sertifikat</span>
-                        <span class="b5_9 b5_0">İnteraktivlərdə iştirak etmək imkanı</span>
-                        <span class="b5_10 b5_0">Mentor dəstəyi</span>
-                        <span class="b5_11 b5_0">SpeakingClub danışıq dərsləri</span>
-                        <span class="b5_12 b5_0 b01">Kursda olmayan mövzular üzrə 5 əlavə material</span>
-                        <span class="b5_13 b5_0 b01">Mentorla VIP söhbət</span>
-                        <span class="b5_14 b5_0 b01">Müəllimlə fərdi dərs</span>
+                        <div class="b5_content2_header tariff_header">{!! __('home.standart') !!}<span class="tariff_mark"> Tövsiyə olunan paket</span></div>
+                        <span class="b5_1 b5_0 ">{!! __('home.1_ay_tedris') !!}</span>
+                        <span class="b5_2 b5_0">{!! __('home.45_video_ders') !!}</span>
+                        <span class="b5_3 b5_0">{!! __('home.80_materiallar') !!}</span>
+                        <span class="b5_4 b5_0">{!! __('home.ev_tapsirigi_yoxlanisla') !!}</span>
+                        <span class="b5_5 b5_0">{!! __('home.platformamizda_sexsi_kabinet') !!}</span>
+                        <span class="b5_6 b5_0">{!! __('home.umumi_chat') !!}</span>
+                        <span class="b5_7 b5_0">{!! __('home.kursun_gedisatini_izlemek') !!}</span>
+                        <span class="b5_8 b5_0">{!! __('home.movienights') !!}</span>
+                        <span class="b5_8 b5_0">{!! __('home.kursu_bitirme_haqqinda_elektron') !!}</span>
+                        <span class="b5_9 b5_0">{!! __('home.interaktivde_istirak_etmek_imkani') !!}</span>
+                        <span class="b5_10 b5_0">{!! __('home.mentor_desteyi') !!}</span>
+                        <span class="b5_11 b5_0">{!! __('home.speakingclub_danisiq_dersleri') !!}</span>
+                        <span class="b5_12 b5_0 b01">{!! __('home.kursda_olmayan_movzular') !!}</span>
+                        <span class="b5_13 b5_0 b01">{!! __('home.mentorla_vip_sohbet') !!}</span>
+                        <span class="b5_14 b5_0 b01">{!! __('home.muellimle_ferdi_ders') !!}</span>
                         <span id="cena_standart" class="b5_15 b5_0"><span class="b5_15 b5_0"><span class="b5_16">79 AZN</span></span></span>
-                        <button class="b5_standart_btn btn_yellow tariff_btn" onclick="zapisatsa()">Almaq</button>
+                        <button class="b5_standart_btn btn_yellow tariff_btn" onclick="zapisatsa()">{!! __('home.almaq') !!}</button>
                     </div>
                 </div>
                 <div class="b5_con3 tariff_card col-md-12 col-sm-12 col-12" id="b5con3">
                     <div class="b5_con3t b5_content tariff_content" id="b5con3t">
-                        <div class="b5_content3_header tariff_header">PRO<span class="tariff_mark"> только 10 человек</span></div>
-                        <span class="b5_1 b5_0 ">1 ay tədris</span>
-                        <span class="b5_2 b5_0">45+ video dərs</span>
-                        <span class="b5_3 b5_0"><span class="green_highlight">90+ </span>materiallar</span>
-                        <span class="b5_4 b5_0">Ev tapşırığı <span class="green_highlight"> yoxlanışla</span></span>
-                        <span class="b5_5 b5_0">Platformamızda şəxsi kabinet</span>
-                        <span class="b5_6 b5_0">Ümumi chat</span>
-                        <span class="b5_7 b5_0">Kursun gedişatını izləmək üçün iş dəftəri</span>
-                        <span class="b5_8 b5_0">MovieNights</span>
-                        <span class="b5_8 b5_0">Kursu bitirmə haqqında elektron sertifikat</span>
-                        <span class="b5_9 b5_0">İnteraktivlərdə iştirak etmək imkanı</span>
-                        <span class="b5_10 b5_0">Mentor dəstəyi</span>
-                        <span class="b5_11 b5_0">SpeakingClub danışıq dərsləri<span class="green_highlight green_highlight"> ətraflı individual feedback ilə</span></span>
-                        <span class="b5_12 b5_0">Kursda olmayan mövzular üzrə 5 əlavə material</span>
-                        <span class="b5_13 b5_0">Mentorla VIP söhbət</span>
-                        <span class="b5_14 b5_0">Müəllimlə fərdi dərs</span>
+                        <div class="b5_content3_header tariff_header">{!! __('home.pro') !!}<span class="tariff_mark"> только 10 человек</span></div>
+                        <span class="b5_1 b5_0 ">{!! __('home.1_ay_tedris') !!}</span>
+                        <span class="b5_2 b5_0">{!! __('home.45_video_ders') !!}</span>
+                        <span class="b5_3 b5_0">{!! __('home.90_materiallar') !!}</span>
+                        <span class="b5_4 b5_0">{!! __('home.ev_tapsirigi_yoxlanisla') !!}</span>
+                        <span class="b5_5 b5_0">{!! __('home.platformamizda_sexsi_kabinet') !!}</span>
+                        <span class="b5_6 b5_0">{!! __('home.umumi_chat') !!}</span>
+                        <span class="b5_7 b5_0">{!! __('home.kursun_gedisatini_izlemek') !!}</span>
+                        <span class="b5_8 b5_0">{!! __('home.movienights') !!}</span>
+                        <span class="b5_8 b5_0">{!! __('home.kursu_bitirme_haqqinda_elektron') !!}</span>
+                        <span class="b5_9 b5_0">{!! __('home.interaktivde_istirak_etmek_imkani') !!}</span>
+                        <span class="b5_10 b5_0">{!! __('home.mentor_desteyi') !!}</span>
+                        <span class="b5_11 b5_0">{!! __('home.speakingclub_danisiq_dersleri_etrafli_individual') !!}</span>
+                        <span class="b5_12 b5_0">{!! __('home.kursda_olmayan_movzular') !!}</span>
+                        <span class="b5_13 b5_0">{!! __('home.mentorla_vip_sohbet') !!}</span>
+                        <span class="b5_14 b5_0">{!! __('home.muellimle_ferdi_ders') !!}</span>
                         <span id="cena_pro" class="b5_15 b5_0"><span class="b5_15 b5_0"><span class="b5_16">119 AZN</span></span></span>
-                        <button class="b5_pro_btn btn_yellow tariff_btn" onclick="zapisatsa()">Almaq</button>
+                        <button class="b5_pro_btn btn_yellow tariff_btn" onclick="zapisatsa()">{!! __('home.almaq') !!}</button>
                     </div>
                 </div>
             </div>
             <div class="t_head">
-                <h3 class="tariff_text red_highlight">Hələ də şübhələnirsiniz?</h3>
-                <h5 class="tariff_text">Sinaq paketi yoxlayin!</h5>
+                <h3 class="tariff_text red_highlight">{!! __('home.hele_de_subhelenirsiz') !!}</h3>
+                <h5 class="tariff_text">{!! __('home.sinaq_paketi_yoxlayin') !!}</h5>
             </div>
             <div class="b5_con4 tariff_card col-md-12 col-sm-12 col-12 mx-auto" id="b5con4">
                 <div class="b5_con3t b5_content tariff_content" id="b5con3t">
-                    <div class="b5_content3_header tariff_header"><span class="b5_content3_header1"> TRIAL</span></div>
-                    <span class="b5_1 b5_0 ">Şəxsi kabinetə 3 günlük giriş</span>
-                    <span class="b5_2 b5_0"><span class="green_highlight">3 </span> video dərs</span>
-                    <span class="b5_3 b5_0"><span class="green_highlight">3 </span>material</span>
-                    <span class="b5_4 b5_0"><span class="green_highlight"> 1 </span> ev tapşırığın yoxlanışı </span>
-                    <span class="b5_6 b5_0">Ümumi chat</span>
+                    <div class="b5_content3_header tariff_header"><span class="b5_content3_header1"> {!! __('home.trial') !!}</span></div>
+                    <span class="b5_1 b5_0 ">{!! __('home.sexsi_kabinete_3_gunluk_giris') !!}</span>
+                    <span class="b5_2 b5_0">{!! __('home.3_video_ders') !!}</span>
+                    <span class="b5_3 b5_0">{!! __('home.3_material') !!}</span>
+                    <span class="b5_4 b5_0">{!! __('home.1_ev_tapsirigin') !!}</span>
+                    <span class="b5_6 b5_0">{!! __('home.umumi_chat') !!}</span>
                     <span id="cena_trial" class="b5_15 b5_0"><span class="b5_15 b5_0"><span class="b5_16">9 AZN</span></span></span>
-                    <button class="b5_trial_btn btn_yellow tariff_btn" onclick="zapisatsa()">Almaq</button>
+                    <button class="b5_trial_btn btn_yellow tariff_btn" onclick="zapisatsa()">{!! __('home.almaq') !!}</button>
                 </div>
             </div>
         </section>
         <section class="about_us">
-            <div class="b4_headert section_heading">Bizim haqqımızda</div>
+            <div class="b4_headert section_heading">{!! __('home.bizim_haqqimizda') !!}</div>
             <div class="b4_content">
-                <p class="b4c_headert">Missiyamız insanlara ingilis dilini<span class="b4c_headert_green green_highlight">əyləncəli, asan və əlçatan</span> şəkildə öyrənməyə kömək etməkdir.
-                </p>
-                <p class="b4c_text">Layihə üçün prioritet materialların keyfiyyəti və interaktiv tədris metodudur.<br><br>
-                    Biz tələbələrə Present Perfect Tense ilə bağlı fobiyalarını aradan qaldırmağa və Prepositions ilə qarışıqlıq gördükdə təslim olmamağa kömək edirik. <br><br>
-                    Daima tələbələrlə ünsiyyətdə olub, motivasiya etməyə çalışırıq. Gündəlik praktika proqramlarımızın ayrılmaz hissəsidir. Məhz onun sayəsində bütün tələbələrimiz kursun sonunda böyük irəliləyiş görürlər.</p>
+                <p class="b4c_headert">{!! __('home.missiyamiz_insanlara_ingilis_dilini') !!}</p>
+                <p class="b4c_text">{!! __('home.layihe_ucun_prioritet') !!}</p>
             </div>
         </section>
         <section class="our_properties">
-            <div class="b5_headert section_heading">Bizimlə:</div>
+            <div class="b5_headert section_heading">{!! __('home.bizimle') !!}</div>
             <div class="b5_content col-12">
                 <span class="b5_con1 b5_card col-12">
                     <img src="{{ asset('template') }}/img/comment.svg">
-                    <span class="b5_con1_text">Fikirlərinizi ingilis dilində ifadə edin</span>
+                    <span class="b5_con1_text">{!! __('home.fikirlerinizi_ingilis_dilinde') !!}</span>
                 </span>
                 <span class="b5_con2 b5_card col-12">
                     <img src="{{ asset('template') }}/img/person.svg">
-                    <span class="b5_con2_text">Qrammatikadaki boşluqlar üzərində işləyin</span>
+                    <span class="b5_con2_text">{!! __('home.qramatikadaki_bosluqlar') !!}</span>
                 </span>
                 <span class="b5_con3 b5_card col-12">
                     <img src="{{ asset('template') }}/img/books.svg">
-                    <span class="b5_con3_text">Söz ehtiyatınızı genişləndirin</span>
+                    <span class="b5_con3_text">{!! __('home.soz_ehtiyyatinizi') !!}</span>
                 </span>
                 <span class="b5_con4 b5_card col-12">
                     <img src="{{ asset('template') }}/img/speak.svg">
-                    <span class="b5_con4_text">Aksentdən qurtul və səlis danış</span>
+                    <span class="b5_con4_text">{!! __('home.aksentden_qurtul_ve_selis') !!}</span>
                 </span>
             </div>
-            <button class="b5_about_btn btn_white" onclick="about_course()">Ətraflı</button>
+            <button class="b5_about_btn btn_white" onclick="about_course()">{!! __('home.etrafli') !!}</button>
         </section>
         <section id="counters" class="counters">
             <span class="b6_content col-md-12 col-sm-12 col-12">
                 <span class="b6_con1 b6_card col-md-4 col-sm-12 col-12">
-                    <span class="b6_h1"><span id="counter1">450</span>+</span>Tamamlanmış dərs
+                    <span class="b6_h1"><span id="counter1">450</span>+</span>{!! __('home.tamamlanmis_ders') !!}
                 </span>
                 <span class="b6_con2 b6_card col-md-4 col-sm-12 col-12">
-                    <span class="b6_h2"><span id="counter2">500</span>+</span>Paylama materialı
+                    <span class="b6_h2"><span id="counter2">500</span>+</span>{!! __('home.paylama_materiali') !!}
                 </span>
                 <span class="b6_con3 b6_card col-md-4 col-sm-12 col-12">
-                    <span class="b6_h3"><span id="counter3">150</span>+</span>Tələbə
+                    <span class="b6_h3"><span id="counter3">150</span>+</span>{!! __('home.telebe') !!}
                 </span>
             </span>
             <img src="{{ asset('template') }}/img/purple.svg">
         </section>
         <section class="question col-md-12 col-sm-12 col-12">
             <div class="col-md-6 col-sm-12 col-12">
-                <span class="b7_headert">Bizə suallarınız var? <br>Müraciətinizi göndərin və biz sizinlə əlaqə saxlayacayıq!</span>
-                <span class="b7_text">Əlaqə telefon nömrənizi daxil edin və iş günü ərzində sizinlə əlaqə saxlayacayıq</span>
+                <span class="b7_headert">{!! __('home.bize_suallariniz_var') !!} <br>{!! __('home.muracietinizi_gonderin_ve_biz') !!}</span>
+                <span class="b7_text">{!! __('home.elaqe_telefon_nomrenizi') !!}</span>
             </div>
             <span class="b7_form col-md-5 col-sm-12 col-12">
                 <form id="form col-md-12 col-sm-12 col-12">
                     <div class="form_row col-md-12 col-sm-12 col-12">
-                        <input class="col-sm-12 col-12" type="text" name="aname" value="" placeholder="Adınız" autocomplete="off">
-                        <input class="col-sm-12 col-12" type="text" name="anumber" value="" placeholder="Mobil nömrəniz" autocomplete="off">
+                        <input class="col-sm-12 col-12" type="text" name="aname" value="" placeholder="{!! __('home.adiniz') !!}" autocomplete="off">
+                        <input class="col-sm-12 col-12" type="text" name="anumber" value="" placeholder="{!! __('home.mobil_nomreniz') !!}" autocomplete="off">
                     </div>
                     <div class="checkbox_container my-2">
-                        <input type="checkbox" name="acheckbox" class="b7_fcheckbox" id="checkbox1" required=""> <label for="checkbox1" class="b7_flabel ">Mən şəxsi məlumatların emalı ilə razıyam</label>
+                        <input type="checkbox" name="acheckbox" class="b7_fcheckbox" id="checkbox1" required=""> <label for="checkbox1" class="b7_flabel ">{!! __('home.men_sexsi_melumatlarin') !!}</label>
                     </div>
-                    <input id="submitf1" type="submit" name="asubmit" value="Göndər" class="b7_fsubmit btn_green">
+                    <input id="submitf1" type="submit" name="asubmit" value="{!! __('home.gonder') !!}" class="b7_fsubmit btn_green">
                 </form>
             </span>
         </section>
         <section class="comments">
-            <div class="b8_headert section_heading">Tələbələrin rəyləri</div>
+            <div class="b8_headert section_heading">{!! __('home.telebelerin_reylei') !!}</div>
             <div class="comment col-md-12 col-sm-12 col-12">
                 <span class="b8_con1 review_card col-lg-4 col-md-10 col-sm-12 col-12 d-flex justify-content-end">
                     <div class="review_text_holder">
-                        <span class="review_name1 review_pname">Leyla Bünyadzadə</span>
+                        <span class="review_name1 review_pname">{!! __('home.leyla_bunyadzade') !!}</span>
                         <span class="b8c_text1 review_text">
-                            "Çox maraqlı və faydalı oldu! Bu marafon sayəsində mən kiçik bir məqsədimə nail oldum: Yeni il qabağı ingilis dilimi təkmilləşdirmək. Məsuliyyəti hiss etmək və motivasiya çox gözəl idi. Mən də gözəl iştirakçılar və mentorlarla görüşməyimə şad oldum!"
+                            "{!! __('home.cox_maraqli_ve_faydali') !!}"
                         </span>
                     </div>
                     <span class="b8c_img1 review_img_items">
@@ -351,9 +361,9 @@
                 </span>
                 <span class="b8_con2 review_card col-lg-4 col-md-10 col-sm-12 col-12">
                     <div class="review_text_holder">
-                        <span class="review_name2 review_pname">Tatyana Atkova</span>
+                        <span class="review_name2 review_pname">{!! __('home.tatyana_atkova') !!}</span>
                         <span class="b8c_text2 review_text">
-                            "Marafonu çox bəyəndim! Zaman çox tez və inanılmaz dərəcədə maraqlı keçdi! Təşkilatçıların daimi dəstəyinə və bütün suallara cavab verməyə hazır olduqlarına görə minnətdaram. Hər gün tapşırıqlar qeyri-adi və maraqlı idi".
+                            "{!! __('home.marafonu_cox_beyendim') !!}".
                         </span>
                     </div>
                     <span class="b8c_img2 review_img_items">
@@ -364,9 +374,9 @@
                 </span>
                 <span class="b8_con3 review_card col-lg-4 col-md-10 col-sm-12 col-12 d-flex justify-content-end">
                     <div class="review_text_holder">
-                        <span class="review_name3 review_pname">Fatimə Mirbilalova</span>
+                        <span class="review_name3 review_pname">{!! __('home.fatime_mirbalayeva') !!}</span>
                         <span class="b8c_text3 review_text">
-                            "Rahat dərs cədvəli, sürətli Quiz tapşırıqları, interaktivlər, memlar, maraqlı ünsiyyət və şübhəsiz ki, danışıq, dinləmə və yazma kimi bacarıqların və dil səviyyəsininin yüksəlməsi. Görülən keyfiyyətli iş və maraqlı təcrübə üçün təşəkkür edirəm".
+                            "{!! __('home.rahat_ders_cedveli') !!}".
                         </span>
                     </div>
                     <span class="b8c_img3 review_img_items">
@@ -376,9 +386,9 @@
                 </span>
                 <span class="b8_con4 review_card col-lg-4 col-md-10 col-sm-12 col-12">
                     <div class="review_text_holder">
-                        <span class="review_name4 review_pname">Leyla Mustafayevа</span>
+                        <span class="review_name4 review_pname">{!! __('home.leyla_mustafayeve') !!}</span>
                         <span class="b8c_text4 review_text">
-                            "Möhtəşəmdir ki, hər gün praktiki olaraq təkrar olunmayan yeni növ tapşırıqlar olur. İnteraktivləri də qeyd etmək istərdim. Marafonu daha da maraqlı edən və eyni zamanda sizdə növbəti birinə qoşulmaq istəyi yaradan gözəl ideya. Bu mənim planlarımda deyildi, amma mən artıq gözləyə bilmirəm."
+                            "{!! __('home.mohtesemdir_ki_her_gun') !!}"
                         </span>
                     </div>
                     <span class="b8c_img4 review_img_items">
