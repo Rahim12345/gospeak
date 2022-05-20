@@ -15,12 +15,12 @@
         <nav class="header_desktop">
             <span class="header_left_block">
                 <span class="logo_left">
-                    <a href="/"><img src="https://www.gospeak.az/img/logo-without%20text.svg"></a>
+                    <a href="{{ route('front.home') }}"><img src="https://www.gospeak.az/img/logo-without%20text.svg"></a>
                 </span>
                 <span class="header_left_block_links">
-                    <a class="main_pg_ru navlink  link_active" href="index.html">Əsas</a>
-                    <a class="about_course_ru navlink  " href="aboutUs.html">Kurs haqqında</a>
-                    <a class="about_us_ru navlink  " href="about_courses.html">Bizim haqqımızda</a>
+                    <a class="main_pg_ru navlink  link_active" href="{{ route('front.home') }}">{{ __('menu.esas') }}</a>
+                    <a class="about_course_ru navlink  " href="aboutUs.html">{{ __('menu.kurs_haqqinda') }}</a>
+                    <a class="about_us_ru navlink  " href="about_courses.html">{{ __('menu.bizim_haqqimizda') }}</a>
                 </span>
             </span>
             <span class="header_elips"><img src="https://www.gospeak.az/img/green.svg"></span>
@@ -410,21 +410,21 @@
             <div class="footer_left col-lg-2 col-md-12 col-sm-12 col-12">
                 <img src="https://www.gospeak.az/img/logo-white.svg" class="footer_logo">
                 <span class="fleft_text">
-			<span>GoSpeak Copyright 2022.</span>
-			<span>All Rights Reserved GoSpeak</span>
+			<span>{{ __('menu.copyright') }}</span>
+			<span>{{ __('menu.all_rights') }}</span>
 			<span>VÖEN 2001690142</span>
 		</span>
             </div>
             <div class="footer_right col-lg-9 col-md-12 col-sm-12 col-12">
 		<span class="fright_1section col-md-3 col-sm-12 col-12">
-			<a href="https://gospeak.az/az/index" class="fr_1_1">Əsas</a>
-			<a href="https://gospeak.az/az/about-course" class="fr_1_2">Kurs haqqında</a>
-			<a href="https://gospeak.az/az/about-us" class="fr_1_3">Bizim haqqımızda</a>
-			<a href="https://gospeak.az/az/profile" class="fr_1_4">Şəxsi kabinet</a>
+			<a href="https://gospeak.az/az/index" class="fr_1_1">{{ __('menu.esas') }}</a>
+			<a href="https://gospeak.az/az/about-course" class="fr_1_2">{{ __('menu.kurs_haqqinda') }}</a>
+			<a href="https://gospeak.az/az/about-us" class="fr_1_3">{{ __('menu.bizim_haqqimizda') }}</a>
+			<a href="https://gospeak.az/az/profile" class="fr_1_4">{{ __('menu.sexsi_kabinet') }}</a>
 		</span>
                 <span class="fright_2section col-lg-4 col-md-12 col-sm-12 col-12">
-			<a href="https://gospeak.az/az/confidential" class="fr_2_1">Məxfilik siyasəti</a>
-			<a href="https://gospeak.az/az/rules" class="fr_2_2">İstifadə qaydaları</a>
+			<a href="https://gospeak.az/az/confidential" class="fr_2_1">{{ __('menu.mexfilik_siyaseti') }}</a>
+			<a href="https://gospeak.az/az/rules" class="fr_2_2">{{ __('menu.istifade_qaydalari') }}</a>
 			<span class="fr_2_images">
 			<a href="https://instagram.com/gospeak.az" class="fr_2_3"><img src="https://www.gospeak.az/img/inst.svg" class="fr_2_3_img"></a>
 			<a href="https://wa.me/994509678826" class="fr_2_4"><img src="https://www.gospeak.az/img/whatsapp.svg" class="fr_2_4_img"></a>
@@ -433,10 +433,10 @@
 			</span>
 		</span>
                 <span class="fright_3section col-lg-4 col-md-12 col-sm-12 col-12">
-			<span class="fr_3_text">Ən son xəbərləri qaçırmamaq üçün abunə olun!</span>
+			<span class="fr_3_text">{{ __('menu.en_son_xeberleri') }}</span>
 			<span class="fr_3_form">
 				<form id="form1">
-				<input autocomplete="off" type="email" name="e-mail" value="" placeholder="Sizin E-poçtunuz" class="fr_3_form_input" required="">
+				<input autocomplete="off" type="email" name="e-mail" value="" placeholder="{{ __('menu.sizin_e_poctunuz') }}" class="fr_3_form_input" required="">
 				<button type="submit" class="fr_3_form_submit js-open-modal" data-modal="2"><img src="https://www.gospeak.az/img/Arrow-Right.svg"></button>
 				</form>
 			</span>
