@@ -1,0 +1,174 @@
+.review_card {
+  position: relative;
+  margin: 2rem;
+  min-height: 300px;
+}
+
+.review_text_holder {
+  position: absolute;
+  z-index: 2;
+  padding: 2rem;
+}
+
+.review_pname {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.review_text {
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 2rem 0;
+  width: 70%;
+}
+
+.review_text span {
+  padding: 0 1rem;
+}
+
+.review_img_items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.review_bg {
+  width: 100%;
+}
+
+.review_avatar1 {
+  position: absolute;
+  bottom: -26%;
+  right: -6%;
+}
+
+.review_avatar2 {
+  position: absolute;
+  bottom: -26%;
+  left: -7%;
+}
+
+.review_avatar3 {
+  position: absolute;
+  bottom: -28%;
+  left: -8%;
+}
+
+.review_avatar4 {
+  position: absolute;
+  bottom: -20%;
+  right: -9%;
+}
+
+.b8_con1,
+.b8_con3 {
+  margin-top: 8rem;
+}
+
+@media (max-width: 1200px) {
+  .review_card {
+    margin: 2rem;
+  }
+  .review_text_holder {
+    padding: 0.9rem;
+  }
+
+  .review_pname {
+    font-size: 0.9rem;
+  }
+
+  .review_text {
+    font-size: 0.8rem;
+  }
+
+  .review_bg {
+    max-height: 310px;
+    min-height: 250px;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1199px) {
+  .review_card {
+    width: 40% !important;
+    margin: 2.5rem !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .review_card {
+    display: flex;
+    justify-content: center !important;
+    margin: 4rem 0 !important;
+  }
+
+  .review_bg {
+    display: none;
+  }
+
+  .review_text_holder {
+    width: 70%;
+  }
+
+  .review_avatar1,
+  .review_avatar2,
+  .review_avatar3,
+  .review_avatar4 {
+    bottom: 0;
+  }
+
+  .review_avatar1,
+  .review_avatar3 {
+    right: 0;
+    left: unset;
+  }
+
+  .review_avatar2,
+  .review_avatar4 {
+    left: 0;
+    right: unset;
+  }
+
+  .review_img_items {
+    top: 100%;
+  }
+
+  .b8_con1 {
+    background: #ee5c4c;
+  }
+
+  .b8_con2 {
+    background: #47c171;
+  }
+
+  .b8_con3 {
+    background: #8584e2;
+  }
+
+  .b8_con4 {
+    background: #ffd41d;
+  }
+}
+
+@media (max-width: 598px) {
+  .review_text_holder {
+    width: 100%;
+  }
+
+  .review_text {
+    font-size: 0.8rem;
+  }
+
+  .review_card {
+    margin: 1rem 0 !important;
+    min-height: 390px;
+  }
+}

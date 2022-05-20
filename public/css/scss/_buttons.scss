@@ -1,0 +1,30 @@
+.btn_yellow {
+    font-weight: 500;
+    color: #292929;
+    background-color: #ffd41d;
+    transition: all .6s ease;
+}
+
+.btn_white {
+    color: #292929;
+    transition: all .4s ease;
+}
+
+.btn_white:hover {
+    color: #ffd41d !important;
+    border-color: #ffd41d !important;
+}
+
+.btn_yellow:hover {
+    background: #ffffff !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.250929) !important;
+}
+
+.btn_green{
+    transition: all .6s ease;
+}
+
+.btn_green:hover {
+    background: #7ae1a0 !important;
+    border-color: #7ae1a0 !important;
+}

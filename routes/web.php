@@ -10,4 +10,7 @@ Route::get('langs/{locale}',[PagesController::class,'langSwitcher'])
 Route::group(['middleware'=>'locale'], function () {
     Route::get('/', [PagesController::class, 'index'])
         ->name('front.home');
+
+    Route::get('/about-course', [PagesController::class, 'aboutCourse'])
+        ->name('front.about.cource');
 });

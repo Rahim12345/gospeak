@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo-without text.svg" type="image/x-icon">
+</head>
+
+<body style="overflow-x: hidden;">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MV2FDQT" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header id="head">
+        <div class="container">
+            <nav class="header_desktop">
+                <span class="header_left_block">
+                    <span class="logo_left">
+                        <a href="/"><img src="img/logo-without text.svg" /></a>
+                    </span>
+                    <span class="header_left_block_links">
+                        <a class="main_pg_ru navlink  " href="https://gospeak.az/az">Əsas</a>
+                        <a class="about_course_ru navlink  link_active" href="https://gospeak.az/az/about-course">Kurs
+                            haqqında</a>
+                        <a class="about_us_ru navlink  " href="https://gospeak.az/az/about-us">Bizim haqqımızda</a>
+                    </span>
+                </span>
+                <span class="header_elips"><img src="img/green.svg" /></span>
+                <span class="header_right_block">
+                    <div class="dropdown header_dropdown dropdown-desktop">
+                        <button class="btn dropdown-toggle header_dropdown_btn" type="button" id="dropdownMenuButton3"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            az
+                        </button>
+                        <ul class="dropdown-menu" name="select_lang" id="sel" aria-labelledby="dropdownMenuButton3">
+                            <li><a class="dropdown-item" onClick="set_lang(`ru`)">RU</a></li>
+                            <li><a class="dropdown-item" onClick="set_lang(`az`)">AZ</a></li>
+                            <li><a class="dropdown-item" onClick="set_lang(`en`)">EN</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown header_dropdown dropdown-desktop" id="sel">
+                        <button class="btn dropdown-toggle header_dropdown_btn" type="button" id="dropdownMenuButton4"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            AZN
+                        </button>
+                        <ul class="dropdown-menu" name="select_valute" id="selval"
+                            aria-labelledby="dropdownMenuButton4">
+                            <li><a class="dropdown-item" onClick="set_valute(`AZN`);window.location.reload();">AZN</a>
+                            </li>
+                            <li><a class="dropdown-item" onClick="set_valute(`USD`);window.location.reload();">USD</a>
+                            </li>
+                            <li><a class="dropdown-item" onClick="set_valute(`EUR`);window.location.reload();">EUR</a>
+                            </li>
+                            <li><a class="dropdown-item" onClick="set_valute(`RUB`);window.location.reload();">RUB</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <span id="joinpc" class="join">
+                        <button class="join_btn" onClick="login()">
+                            <img src="img/Profile.svg" />
+                            <span class="join_btn_text">Giriş</span>
+                        </button>
+                    </span>
+                    <a class="call_num" href="tel:+994 50 967 88 26">+994 50 967 88 26</a>
+                </span>
+                <a class="call_num_mobile" href="tel:+994 50 967 88 26"><img src="img/phonem.svg" /></a>
+                <button class="menu-open" onClick="menu_open()">
+                    <div id="omenu"><img src="img/menu.svg" alt="Open menu"></div>
+                </button>
+                <ul class="menu" id="menu">
+                    <li><a class="main_pg_ru" href="https://gospeak.az/az/">Əsas</a></li>
+                    <li><a class="about_course_ru" href="https://gospeak.az/az/about-course">Kurs haqqında</a></li>
+                    <li><a class="about_us_ru" href="https://gospeak.az/az/about-us">Bizim haqqımızda</a></li>
+                    <li>
+                        <span id="joinmob" class="join_mobile">
+                            <button class="join_btn" onClick="login()">
+                                <img src="img/Profile.svg" />
+                                <span class="join_btn_text">Giriş</span>
+                            </button>
+                        </span>
+                    </li>
+                    <select class="select_lang1" name="select_lang" id="selmob" onchange="set_lang(this.value)">
+                        <option value="ru">RU</option>
+                        <option value="az">AZ</option>
+                        <option value="en">EN</option>
+                    </select>
+                    <select class="select_valute1" name="select_valute" onchange="set_valute(this.value)"
+                        id="selvalmob">
+                        <option value="AZN">AZN</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="RUB">RUB</option>
+                    </select>
+                </ul>
+            </nav>
+            <div class="modal modal_auth" data-modal="5">
+                <!--   Svg иконка для закрытия окна  -->
+                <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+                </svg>
+                <h3 class="login_header">Giriş</h3>
+                <form class="login_form" id="login_form">
+                    <input class="login_email" type="email" name="email" placeholder="Sizin E-mail" required>
+                    <input class="login_pass" type="password" name="pass" placeholder="Sizin parol" required>
+                    <button class="login_submit btn_yellow" type="submit" name="auth">Daxil ol</button>
+                </form>
+                <button class="restore_pass_btn">Parolu unutmusuz?</button>
+                <p class="login_text">Şəxsi kabinetə giriş ancaq kursun tələbələri üçün mümkündür</p>
+            </div>
+            <div class="modal modal_restorepass" data-modal="9">
+                <!--   Svg иконка для закрытия окна  -->
+                <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+                </svg>
+                <h3 class="login_header">Parol bərpası</h3>
+                <form class="login_form" id="restore_pass">
+                    <input class="login_email" type="email" name="email" placeholder="Ваш E-mail" required>
+                    <button class="login_submit btn_yellow" type="submit" name="auth">Göndər</button>
+                </form>
+                <button class="restore_pass_btn">Geri</button>
+            </div>
+            <div class="modal modal4" data-modal="4">
+                <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+                </svg>
+                <img src="img/kurssale.svg" class="modal_img" />
+                <p class="modal__title" style="color: red;">Xəta</p>
+                <p class="modal_text" style="color: red;">Daxil edilmiş məlumatları yoxlayın!</p>
+            </div>
+            <script type="text/javascript" src="https://gospeak.az/js/header1.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                crossorigin="anonymous"></script>
+        </div>
+    </header>
+    <main id="about_course">
+        <div class="container">
+            <div class="block_about mt-5">
+                <div class="about_items col-md-12 col-sm-12 col-12">
+                    <div class="about_content col-lg-7 col-md-12 col-sm-12 col-12">
+                        <span class="about_header">
+                            <h2>"Elementary"-dən "Intermediate"-a qədər</h2>
+                        </span>
+                        <span class="about_text">Hər bir tələbənin arzusu: hazır qeydlər, ixtisaslı mentorlar və digər
+                            bonuslardan ibarət kurs. Proqram bütün bacarıqları artırmaq üçün nəzərdə tutulmuşdur. Cəmi
+                            30 gün ərzində dil maneəsi üzərində tam qələbə. </span>
+                        <div class="about_features">
+                            <span class="ab_feature"><img src="img/TimeCircle.svg" /> 1 ay</span>
+                            <span class="ab_feature"><img src="img/Paper.svg" /> 3 paket</span>
+                            <span class="ab_feature"><img src="img/Star.svg" /> Fərdi yanaşma</span>
+                        </div>
+                        <span class="about_btns">
+                            <button class="b3_zp about_signup btn_yellow" onClick="btn_purchase()">Qeydiyyatdan
+                                keçmək</button>
+                            <button class="b3_about about_info btn_white" onClick="about_course()">Ətraflı</button>
+                        </span>
+                    </div>
+                    <img class="about_img col-lg-5 col-md-12 col-sm-12 col-12" src="img/b3_img.png" />
+                </div>
+            </div>
+            <div class="block_2">
+                <div class="b2_headert section_heading">Təlim necədir</div>
+                <div class="b2_con col-lg-12 col-md-12 col-sm-12 col-12">
+                    <span class="b2_one b2_card col-lg-6 col-md-6 col-sm-12 col-12">
+                        <span class="b2_01 b2_card_h"><img src="img/01.svg" /><span class="b2_h">Video
+                                dərslər</span></span>
+                        <span class="b2_01t b2_card_text">İstənilən vaxt baxa və istədiyiniz qədər nəzərdən keçirə
+                            biləcəyiniz 45+ qısa video dərs.</span>
+                    </span>
+                    <span class="b2_two b2_card col-lg-6 col-md-6 col-sm-12 col-12">
+                        <span class="b2_02 b2_card_h"><img src="img/02.svg" /><span class="b2_h">Qeydlər</span></span>
+                        <span class="b2_02t b2_card_text">Sizin üçün hazırladığımız hazır və başa düşülən
+                            qeydlər.</span>
+                    </span>
+                    <span class="b2_three b2_card col-lg-6 col-md-6 col-sm-12 col-12">
+                        <span class="b2_03 b2_card_h"><img src="img/03.svg" /><span class="b2_h">Ev
+                                tapşırığı</span></span>
+                        <span class="b2_03t b2_card_text">Tələbələrə ev tapşırıqlarını yoxlayan, bütün çətinliklərin
+                            öhdəsindən gəlməyə kömək edən və ətraflı rəy göndərən müəllim nəzarət edir.</span>
+                    </span>
+                    <span class="b2_four b2_card col-lg-6 col-md-6 col-sm-12 col-12">
+                        <span class="b2_04 b2_card_h"><img src="img/fo.PNG" /><span class="b2_h">Əlaqə</span></span>
+                        <span class="b2_04t b2_card_text">Tələbələrə ev tapşırıqlarını yoxlayan, bütün çətinliklərin
+                            öhdəsindən gəlməyə kömək edən və ətraflı rəy göndərən müəllim nəzarət edir.</span>
+                    </span>
+                    <span class="b2_five b2_card col-lg-6 col-md-6 col-sm-12 col-12">
+                        <span class="b2_05 b2_card_h"><img src="img/fivee.PNG" /><span
+                                class="b2_h">SpeakingClub</span></span>
+                        <span class="b2_05t b2_card_text">Həftədə 2 dəfə danışıq ingilis dili dərsləri. Bir fincan
+                            Americano üzərində maraqlı və aktual mövzuları müzakirə edirik.</span>
+                    </span>
+                    <span class="b2_six b2_card col-lg-6 col-md-6 col-sm-12 col-12">
+                        <span class="b2_06 b2_card_h"><img src="img/sixx.PNG" /><span class="b2_h">Movie
+                                Nights</span></span>
+                        <span class="b2_06t b2_card_text">Evinizdə kinoteatr təşkil edəcəyik. Film orijinalda, müzakirə
+                            üçün əlavə chat və əlbəttə ki, xırtıldayan popkorn!</span>
+                    </span>
+                    <span class="b2_seven b2_card col-lg-6 col-md-6 col-sm-12 col-12">
+                        <span class="b2_07 b2_card_h"><img src="img/svn.PNG" /><span
+                                class="b2_h">Sertifikat</span></span>
+                        <span class="b2_07t b2_card_text">Bütün iştirakçılar kursu bitirdikdən sonra sertifikat
+                            alacaqlar.</span>
+                    </span>
+                    <span class="b2_eight b2_card col-lg-6 col-md-6 col-sm-12 col-12">
+                        <span class="b2_08 b2_card_h"><img src="img/eit.PNG" /><span
+                                class="b2_h">İnteraktiv</span></span>
+                        <span class="b2_08t b2_card_text">Bələdçilərimizi, paylama materiallarımızı və növbəti kursda
+                            endirimlərimizi qazana biləcəyiniz kiçik müsabiqələr.</span>
+                    </span>
+                </div>
+            </div>
+            <img src="img/red.svg" class="b2-b3_elips" />
+            <div class="block_3" id="program">
+                <div class="b3_headert section_heading">Kurs proqramı</div>
+                <div class="b3_con">
+                    <div class="b3_con1 b3_block" id="b3con1">
+                        <div class="b3_content1_header b3_header">
+                            <span class="b3_ch1_text">Giriş bloku</span><button id="plus1" class="b3_ch1_btn"
+                                onClick="plus1()"></button>
+                        </div>
+                        <ul class="b3_con1t b3_content" id="b3con1t">
+                            <li><span>Tanışlıq videosu</span></li>
+                            <li><span>Öyrənməyi öyrənmək – tədris hiylələri</span></li>
+                            <li><span>Dil maneəsi. Necə qalib gəlmək olar?</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="b3_con2 b3_block" id="b3con2">
+                        <div class="b3_content2_header b3_header">
+                            <span class="b3_ch2_text">1-ci həftə</span><button id="plus2" class="b3_ch2_btn"
+                                onClick="plus2()"></button>
+                        </div>
+                        <ul class="b3_con2t b3_content" id="b3con2t">
+                            <li><span>There is vs. there are</span></li>
+                            <li><span>Etiquette basics - greetings, farewells and small talk</span></li>
+                            <li><span>Articles – with countable and uncountable nouns</span></li>
+                            <li><span>Personality and feelings</span></li>
+                            <li><span>Countables and Uncountables: much/many</span></li>
+                            <li><span>Food and drinks</span></li>
+                            <li><span>Modal verbs</span></li>
+                            <li><span>Making requests (e.g. at a restaurant)</span></li>
+                            <li><span>Adverbs of frequency</span></li>
+                            <li><span>Describing habits and daily routines</span></li>
+                        </ul>
+                    </div>
+                    <div class="b3_con3 b3_block" id="b3con3">
+                        <div class="b3_content3_header b3_header">
+                            <span class="b3_ch3_text">2-ci həftə</span><button id="plus3" class="b3_ch3_btn"
+                                onClick="plus3()"></button>
+                        </div>
+                        <ul class="b3_con3t b3_content" id="b3con3t">
+                            <li><span>Prepositions of time and place</span></li>
+                            <li><span>Describing places</span></li>
+                            <li><span>Conjunctions and clauses</span></li>
+                            <li><span>Expressing ability and inability</span></li>
+                            <li><span>Questions words</span></li>
+                            <li><span>Asking for and giving directions</span></li>
+                            <li><span>Used to / get used to</span></li>
+                            <li><span>Daily and free-time activities</span></li>
+                            <li><span>Word order in a sentence</span></li>
+                            <li><span>Family and friends</span></li>
+                        </ul>
+                    </div>
+                    <div class="b3_con4 b3_block" id="b3con4">
+                        <div class="b3_content4_header b3_header">
+                            <span class="b3_ch4_text">3-cü həftə</span><button id="plus4" class="b3_ch4_btn"
+                                onClick="plus4()"></button>
+                        </div>
+                        <ul class="b3_con4t b3_content" id="b3con4t">
+                            <li><span>Comparatives and superlatives</span></li>
+                            <li><span>Making comparisons</span></li>
+                            <li><span>Gerund</span></li>
+                            <li><span>Weather</span></li>
+                            <li><span>Passive voice</span></li>
+                            <li><span>Transport and travel</span></li>
+                            <li><span>Irregular verbs</span></li>
+                            <li><span>Describing jobs</span></li>
+                            <li><span>Phrasal verbs</span></li>
+                            <li><span>Body and health</span></li>
+                        </ul>
+                    </div>
+                    <div class="b3_con5 b3_block" id="b3con5">
+                        <div class="b3_content5_header b3_header">
+                            <span class="b3_ch5_text">4-cü həftə</span><button id="plus5" class="b3_ch5_btn"
+                                onClick="plus5(), plus6()"></button>
+                        </div>
+                        <ul class="b3_con5t b3_content" id="b3con5t">
+                            <li><span>Past simple</span></li>
+                            <li><span>Describing past experiences</span></li>
+                            <li><span>Present continuous</span></li>
+                            <li><span>Education</span></li>
+                            <li><span>Present perfect simple</span></li>
+                            <li><span>Future simple: will</span></li>
+                            <li><span>Future: going to</span></li>
+                            <li><span>Expressing future plans</span></li>
+                            <li><span>Past continuous</span></li>
+                            <li><span>Top idioms</span></li>
+                        </ul>
+                    </div>
+                    <button class="about_zp_btn btn_yellow" id="aboutzp" onClick="btn_purchase()">Qeydiyyatdan
+                        keçmək</button>
+                </div>
+            </div>
+            <img src="img/purple.svg" class="b3-b4_elips" />
+            <div id="_4week" class="block_4 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="b4_con1 col-lg-6 col-md-12 col-sm-12 col-12" id="b4con1">
+                    <div class="b4_content1_header">Sertifikat </div>
+                    <div class="b4_con_text">Kursu bitirdiyinizi təstiqləyəcək.</div>
+                </div>
+                <img class="b4_con_img col-lg-5 col-md-12 col-sm-12 col-12" src="img/ser.png" />
+            </div>
+            <div id="tariffs" class="tariffs">
+                <div class="b2_headert section_heading">Paketlər və qiymətlər</div>
+                <div class="tariff_items col-md-12 col-sm-12 col-12">
+                    <div class="b5_con1 tariff_card col-md-12 col-sm-12 col-12" id="b5con1">
+                        <div class="b5_con1t b5_content tariff_content" id="b5con1t">
+                            <div class="b5_content1_header tariff_header">BASIC</div>
+                            <span class="b5_1 b5_0 ">1 ay tədris</span>
+                            <span class="b5_2 b5_0">45+ video dərs</span>
+                            <span class="b5_3 b5_0">70+ materiallar</span>
+                            <span class="b5_4 b5_0">Ev tapşırığı <span class="red_highlight"> yoxlanışsız</span></span>
+                            <span class="b5_5 b5_0">Platformamızda şəxsi kabinet</span>
+                            <span class="b5_6 b5_0">Ümumi chat</span>
+                            <span class="b5_7 b5_0">Kursun gedişatını izləmək üçün iş dəftəri</span>
+                            <span class="b5_8 b5_0">MovieNights</span>
+                            <span class="b5_8 b5_0">Kursu bitirmə haqqında elektron sertifikat</span>
+                            <span class="b5_9 b5_0 b01">İnteraktivlərdə iştirak etmək imkanı</span>
+                            <span class="b5_10 b5_0 b01">Mentor dəstəyi</span>
+                            <span class="b5_11 b5_0 b01">SpeakingClub danışıq dərsləri</span>
+                            <span class="b5_12 b5_0 b01">Kursda olmayan mövzular üzrə 5 əlavə material</span>
+                            <span class="b5_13 b5_0 b01">Mentorla VIP söhbət</span>
+                            <span class="b5_14 b5_0 b01">Müəllimlə fərdi dərs</span>
+                            <span id="cena_basic" class="b5_15 b5_0"><span class="b5_16"> 59 AZN</span></span>
+                            <button class="b5_basic_btn btn_yellow tariff_btn" onClick="btn_purchase()">Almaq</button>
+                        </div>
+                    </div>
+                    <div class="b5_con2 tariff_card col-md-12 col-sm-12 col-12 py-5" id="b5con2">
+                        <div class="b5_con2t b5_content tariff_content" id="b5con2t">
+                            <div class="b5_content2_header tariff_header">STANDART<span class="tariff_mark"> Tövsiyə
+                                    olunan paket</span></div>
+                            <span class="b5_1 b5_0 ">1 ay tədris</span>
+                            <span class="b5_2 b5_0">45+ video dərs</span>
+                            <span class="b5_3 b5_0"><span class="green_highlight">80+ </span>materiallar</span>
+                            <span class="b5_4 b5_0">Ev tapşırığı <span class="green_highlight"> yoxlanışla</span></span>
+                            <span class="b5_5 b5_0">Platformamızda şəxsi kabinet</span>
+                            <span class="b5_6 b5_0">Ümumi chat</span>
+                            <span class="b5_7 b5_0">Kursun gedişatını izləmək üçün iş dəftəri</span>
+                            <span class="b5_8 b5_0">MovieNights</span>
+                            <span class="b5_8 b5_0">Kursu bitirmə haqqında elektron sertifikat</span>
+                            <span class="b5_9 b5_0">İnteraktivlərdə iştirak etmək imkanı</span>
+                            <span class="b5_10 b5_0">Mentor dəstəyi</span>
+                            <span class="b5_11 b5_0">SpeakingClub danışıq dərsləri</span>
+                            <span class="b5_12 b5_0 b01">Kursda olmayan mövzular üzrə 5 əlavə material</span>
+                            <span class="b5_13 b5_0 b01">Mentorla VIP söhbət</span>
+                            <span class="b5_14 b5_0 b01">Müəllimlə fərdi dərs</span>
+                            <span id="cena_standart" class="b5_15 b5_0"><span class="b5_16"> 79 AZN</span></span>
+                            <button class="b5_standart_btn btn_yellow tariff_btn"
+                                onClick="btn_purchase()">Almaq</button>
+                        </div>
+                    </div>
+                    <div class="b5_con3 tariff_card col-md-12 col-sm-12 col-12" id="b5con3">
+                        <div class="b5_con3t b5_content tariff_content" id="b5con3t">
+                            <div class="b5_content3_header tariff_header">PRO<span class="tariff_mark"> только 10
+                                    человек</span></div>
+                            <span class="b5_1 b5_0 ">1 ay tədris</span>
+                            <span class="b5_2 b5_0">45+ video dərs</span>
+                            <span class="b5_3 b5_0"><span class="green_highlight">90+ </span>materiallar</span>
+                            <span class="b5_4 b5_0">Ev tapşırığı <span class="green_highlight"> yoxlanışla</span></span>
+                            <span class="b5_5 b5_0">Platformamızda şəxsi kabinet</span>
+                            <span class="b5_6 b5_0">Ümumi chat</span>
+                            <span class="b5_7 b5_0">Kursun gedişatını izləmək üçün iş dəftəri</span>
+                            <span class="b5_8 b5_0">MovieNights</span>
+                            <span class="b5_8 b5_0">Kursu bitirmə haqqında elektron sertifikat</span>
+                            <span class="b5_9 b5_0">İnteraktivlərdə iştirak etmək imkanı</span>
+                            <span class="b5_10 b5_0">Mentor dəstəyi</span>
+                            <span class="b5_11 b5_0">SpeakingClub danışıq dərsləri<span
+                                    class="green_highlight green_highlight"> ətraflı individual feedback
+                                    ilə</span></span>
+                            <span class="b5_12 b5_0">Kursda olmayan mövzular üzrə 5 əlavə material</span>
+                            <span class="b5_13 b5_0">Mentorla VIP söhbət</span>
+                            <span class="b5_14 b5_0">Müəllimlə fərdi dərs</span>
+                            <span id="cena_pro" class="b5_15 b5_0"><span class="b5_16 green_highlight"> 119
+                                    AZN</span></span>
+                            <button class="b5_pro_btn btn_yellow tariff_btn" onClick="btn_purchase()">Almaq</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="t_head">
+                    <h3 class="tariff_text red_highlight">Hələ də şübhələnirsiniz?</h4>
+                        <h5 class="tariff_text">Sinaq paketi yoxlayin!</h6>
+                </div>
+                <div class="b5_con4 tariff_card col-md-12 col-sm-12 col-12 mx-auto" id="b5con4">
+                    <div class="b5_con3t b5_content tariff_content" id="b5con3t">
+                        <div class="b5_content3_header tariff_header"><span class="b5_content3_header1"> TRIAL</span>
+                        </div>
+                        <span class="b5_1 b5_0 ">Şəxsi kabinetə 3 günlük giriş</span>
+                        <span class="b5_2 b5_0"><span class="green_highlight">3 </span> video dərs</span>
+                        <span class="b5_3 b5_0"><span class="green_highlight">3 </span>material</span>
+                        <span class="b5_4 b5_0"><span class="green_highlight"> 1 </span> ev tapşırığın yoxlanışı </span>
+                        <span class="b5_6 b5_0">Ümumi chat</span>
+                        <span id="cena_trial" class="b5_15 b5_0"><span class="b5_16 green_highlight"> 9
+                                AZN</span></span>
+                        <button class="b5_trial_btn btn_yellow tariff_btn" onClick="btn_purchase()">Almaq</button>
+                    </div>
+                </div>
+            </div>
+            <div class="block_6 col-lg-12 col-md-12 col-sm-12 col-12" id="block6">
+                <div class="block6_left col-lg-4 col-md-12 col-sm-12 col-12">
+                    <span class="b6l_header section_heading">Tez-tez verilən suallar</span>
+                    <img class="b6l_img" src="img/Message.svg">
+                    <span class="b6l_mailtext">Hər hansı bir sualınız varsa, bizə yazın <a
+                            href="mailto:support@gospeak.az" class="b6l_maillink"> support@gospeak.az</a></span>
+                </div>
+                <div class="block6_right col-lg-7 col-md-12 col-sm-12 col-12">
+                    <div class="b6_con1 b6_card" id="b6con1">
+                        <div class="b6_content1_header b6_header">
+                            <span class="b6_ch1_text b6_question">Kurs hansı dil səviyyəsindəki tələbələrə
+                                uyğundur?</span><button id="plus6_1" class="b6_ch1_btn" onClick="plus6_1()"></button>
+                        </div>
+                        <div class="b6_con1t b6_answer" id="b6con1t">Kurs Elementary və ya çoxdan unudulmuş İntermediate
+                            üçün uyğundur. Lüğətinizi genişləndirəcək, qrammatikada möhkəm təməl qoyacaqsınız və
+                            öyrənməkdən həzz alacaqsınız.</div>
+                    </div>
+                    <div class="b6_con2 b6_card" id="b6con2">
+                        <div class="b6_content2_header b6_header">
+                            <span class="b6_ch2_text b6_question">Dərsləri haradan izləyə bilərəm və onlara nə qədər
+                                vaxt çata bilərəm?</span><button id="plus6_2" class="b6_ch2_btn"
+                                onClick="plus6_2()"></button>
+                        </div>
+                        <div class="b6_con2t b6_answer" id="b6con2t">Dərslərin və materiallar platformamızdakı şəxsi
+                            hesabınızda mövcuddur. Kursun başlandığı tarixdən iki ay ərzində dərslər istədiyiniz qədər
+                            nəzərdən keçirilə bilər.</div>
+                    </div>
+                    <div class="b6_con3 b6_card" id="b6con3">
+                        <div class="b6_content3_header b6_header">
+                            <span class="b6_ch3_text b6_question">Ev tapşırığı necə yoxlanılır?</span><button
+                                id="plus6_3" class="b6_ch3_btn" onClick="plus6_3()"></button>
+                        </div>
+                        <div class="b6_con3t b6_answer" id="b6con3t">Ev tapşırıqları Telegram vasitəsilə yoxlanılır.
+                            Kursun əvvəlində mentorunuz yazıb özünü təqdim edəcək və bütün kurs ərzində sizin yol
+                            yoldaşınız olacaq.</div>
+                    </div>
+                    <div class="b6_con4 b6_card" id="b6con4">
+                        <div class="b6_content4_header b6_header">
+                            <span class="b6_ch4_text b6_question">Ödənişin uğurlu olduğunu necə başa düşmək
+                                olar?</span><button id="plus6_4" class="b6_ch4_btn" onClick="plus6_4()"></button>
+                        </div>
+                        <div class="b6_con4t b6_answer" id="b6con4t">Ödənişdən sonra poçta çek göndəriləcək. Starta
+                            yaxın isə şəxsi hesabınızın giriş məlumatları.</div>
+                    </div>
+                    <div class="b6_con5 b6_card" id="b6con5">
+                        <div class="b6_content5_header b6_header">
+                            <span class="b6_ch5_text b6_question">Təsdiq e-poçtu almamışamsa nə etməliyəm?</span><button
+                                id="plus6_5" class="b6_ch5_btn" onClick="plus6_5()"></button>
+                        </div>
+                        <div class="b6_con5t b6_answer" id="b6con5t">'Spam' və 'Vacib' qovluqlarınızı yoxlayın,
+                            məktubumuz orada itmiş ola bilər. Əgər yoxdursa, bizimlə əlaqə saxlayın və biz sizə mütləq
+                            kömək edəcəyik!</div>
+                    </div>
+                    <div class="b6_con6 b6_card" id="b6con6">
+                        <div class="b6_content6_header b6_header">
+                            <span class="b6_ch6_text b6_question">Dərslərim nə vaxt açılacaq?
+                            </span><button id="plus6_6" class="b6_ch6_btn" onClick="plus6_6()"></button>
+                        </div>
+                        <div class="b6_con6t b6_answer" id="b6con6t">Ödəniş uğurlu olarsa, kurs başlandığı gün tələbənin
+                            şəxsi kabinetində dərslər və bütün məlumatlara giriş açılacaq.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="block_8">
+                <div class="b8_headert section_heading">Tələbələrin rəyləri</div>
+                <div class="d-flex justify-content-between align-items-center flex-wrap col-md-12 col-sm-12 col-12">
+                    <span class="b8_con1 review_card col-lg-4 col-md-10 col-sm-12 col-12">
+                        <div class="review_text_holder">
+                            <span class="review_name1 review_pname">Ləman Ağayeva</span>
+                            <span class="b8c_text1 review_text">
+                                "Bu, mənim bu formatda ilk təcrübəm idi və deyə bilərəm ki, bu, çox dinamik və maraqlı
+                                idi. Tapşırıqlar ən xırda təfərrüatlarına qədər düşünülmüşdür, mövzunun ab-havasını hiss
+                                edilir və hər bir detala can qoyulduğu görsənir. Hər şeyi çox bəyəndim, növbəti
+                                marafonda mütləq sizləyəm!"
+                            </span>
+                        </div>
+                        <span class="b8c_img1 review_img_items">
+                            <img src="img/Union.svg" class="b8c_bg1 review_bg" />
+                            <img src="img/about_ava1.png" class="review_avatar1" />
+                        </span>
+                    </span>
+                    <span class="b8_con2 review_card col-lg-4 col-md-10 col-sm-12 col-12">
+                        <div class="review_text_holder">
+                            <span class="review_name2 review_pname">Darya Zimova</span>
+                            <span class="b8c_text2 review_text">
+                                "Tapşırıqların köməyi ilə yeni söz və ifadələri əzbərləyə bildim. Maraqlı interaktivləri
+                                qeyd etməyə bilmərəm, onlarda iştirak etmək çox həyəcanlı idi. Həmçinin, sorğu formatı
+                                lüğətdəki yeni sözlərin təkrarlanması və materialı möhkəmləndirməyə çox kömək edir! Mən
+                                mütləq sizə yenidən qayıdacağam."
+                            </span>
+                        </div>
+                        <span class="b8c_img2 review_img_items">
+                            <img src="img/Union2.svg" class="b8c_bg2 review_bg" />
+                            <img src="img/revblockelips.svg" class="revelips2" />
+                            <img src="img/about_ava2.png" class="review_avatar2" />
+                        </span>
+                    </span>
+                    <span class="b8_con3 review_card col-lg-4 col-md-10 col-sm-12 col-12 d-flex justify-content-end">
+                        <div class="review_text_holder">
+                            <span class="review_name3 review_pname">Səriyyə Əliyeva</span>
+                            <span class="b8c_text3 review_text">
+                                "Marafonunuzu tövsiyə etdiyinə görə Always Hungry Baku-ya minnətdaram! Marafon mənə
+                                ingilis dili səviyyəm və lüğətimin 100%-ə çatması lazım olduğunu anlamağa kömək etdi.
+                                Materiallarınız dili öyrənmək üçün çox asan, metodunuz isə çox gözəldi."
+                            </span>
+                        </div>
+                        <span class="b8c_img3 review_img_items">
+                            <img src="img/Union3_1.svg" class="b8c_bg3 review_bg" />
+                            <img src="img/about_ava3.png" class="review_avatar3" />
+                        </span>
+                    </span>
+                    <span class="b8_con4 review_card col-lg-4 col-md-10 col-sm-12 col-12">
+                        <div class="review_text_holder">
+                            <span class="review_name4 review_pname">Dinara Xanməmmədova</span>
+                            <span class="b8c_text4 review_text">
+                                "Mən tamamilə hər şeyi bəyəndim və proqramdan razı qaldım. Böyük miqdarda faydalı
+                                məlumat və bütün suallarıma cavablar aldım. Kömək və rəyləriniz üçün çox sağ olun.
+                                Marafondan əvvəl və sonra nitqdə irəliləyiş və fərqlilik hiss edirəm"
+                            </span>
+                        </div>
+                        <span class="b8c_img4 review_img_items">
+                            <img src="img/Union4.svg" class="b8c_bg4 review_bg" />
+                            <img src="img/about_ava4.png" class="review_avatar4" />
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <button class="about_zp_btn2 btn_yellow" id="aboutzp2" onClick="btn_purchase()">Qeydiyyatdan keçmək</button>
+        </div>
+        </div>
+    </main>
+
+
+    <meta name="format-detection" content="telephone=no">
+    <footer>
+        <div class="container">
+            <div class="footer col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="footer_left col-lg-2 col-md-12 col-sm-12 col-12">
+                    <img src="img/logo-white.svg" class="footer_logo" />
+                    <span class="fleft_text">
+                        <span>GoSpeak Copyright 2022.</span>
+                        <span>All Rights Reserved GoSpeak</span>
+                        <span>VÖEN 2001690142</span>
+                    </span>
+                </div>
+                <div class="footer_right col-lg-9 col-md-12 col-sm-12 col-12">
+                    <span class="fright_1section col-md-3 col-sm-12 col-12">
+                        <a href="https://gospeak.az/az/index" class="fr_1_1">Əsas</a>
+                        <a href="https://gospeak.az/az/about-course" class="fr_1_2">Kurs haqqında</a>
+                        <a href="https://gospeak.az/az/about-us" class="fr_1_3">Bizim haqqımızda</a>
+                        <a href="https://gospeak.az/az/profile" class="fr_1_4">Şəxsi kabinet</a>
+                    </span>
+                    <span class="fright_2section col-lg-4 col-md-12 col-sm-12 col-12">
+                        <a href="https://gospeak.az/az/confidential" class="fr_2_1">Məxfilik siyasəti</a>
+                        <a href="https://gospeak.az/az/rules" class="fr_2_2">İstifadə qaydaları</a>
+                        <span class="fr_2_images">
+                            <a href="https://instagram.com/gospeak.az" class="fr_2_3"><img src="img/inst.svg"
+                                    class="fr_2_3_img" /></a>
+                            <a href="https://wa.me/994509678826" class="fr_2_4"><img src="img/whatsapp.svg"
+                                    class="fr_2_4_img" /></a>
+                            <a href="https://t.me/@gospeakaz" class="fr_2_5"><img src="img/telegram.svg"
+                                    class="fr_2_5_img" /></a>
+                            <a href="https://www.tiktok.com/@gospeak.az" class="fr_2_6"><img src="img/tiktok.svg"
+                                    class="fr_2_6_img" /></a>
+                        </span>
+                    </span>
+                    <span class="fright_3section col-lg-4 col-md-12 col-sm-12 col-12">
+                        <span class="fr_3_text">Ən son xəbərləri qaçırmamaq üçün abunə olun!</span>
+                        <span class="fr_3_form">
+                            <form id="form1">
+                                <input autocomplete="off" type="email" name="e-mail" value=""
+                                    placeholder="Sizin E-poçtunuz" class="fr_3_form_input" required />
+                                <button type="submit" class="fr_3_form_submit js-open-modal" data-modal="2"><img
+                                        src="img/Arrow-Right.svg" /></button>
+                            </form>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="modal modal2" data-modal="2">
+
+        <svg class="modal__cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+                d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+        </svg>
+        <img src="img/modal1.svg" class="modal_img" />
+        <p class="modal__title">Müraciətiniz üçün təşəkkür edirik!</p>
+        <p class="modal_text">Müraciətiniz uğurla göndərildi!
+            Kurs xəbərləri haqqında məlumatı e-poçtunuza göndərəcəyik.</p>
+    </div>
+
+    <!-- Подложка под модальным окном -->
+    <div class="overlay js-overlay-modal"></div>
+    <script type="text/javascript" src="js/footer.js"></script>
+    <script type="text/javascript" src="js/about_course.js"></script>
+    <script type="text/javascript" src="js/valute.js"></script>
+</body>
+
+</html>

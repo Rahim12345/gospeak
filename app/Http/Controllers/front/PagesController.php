@@ -22,6 +22,11 @@ class PagesController extends Controller
 
     public function index()
     {
-        return view('front.layout.master');
+        return view('front.pages.home');
+    }
+
+    public function aboutCourse()
+    {
+        return view('front.pages.about-cource');
     }
 }

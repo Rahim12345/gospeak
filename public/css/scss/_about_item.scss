@@ -1,0 +1,144 @@
+.block_about {
+    margin: 7rem 0 4rem 0;
+  }
+  
+  .about_items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 3px solid #ffd41d;
+    border-radius: 8px;
+  }
+  
+  .about_content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .about_header {
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin: 2rem 0 2rem 6rem;
+  }
+  
+  .about_header h2 {
+    font-weight: 700;
+    line-height: 2.75rem;
+    font-size: 1.5rem !important;
+  }
+  
+  .about_features {
+    margin-left: 6rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .about_text {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 80%;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin: 1rem 0 1rem 6rem;
+  }
+  
+  .ab_feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 20px;
+    color: #a4a4ad;
+    margin-right: 1rem;
+  }
+  
+  .about_btns {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 3rem 0 2rem 6rem;
+  }
+  
+  .about_signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 40px;
+    font-size: 1rem;
+    background: #ffd41d;
+    border-radius: 4px;
+    margin-right: 1rem;
+    border: none;
+  }
+  
+  .about_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 40px;
+    font-size: 1rem;
+    border: 1px solid #292929;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-right: 1rem;
+  }
+  
+  .about_img {
+    border-radius: 6px;
+  }
+  
+  @media (max-width: 992px) {
+    .about_content {
+      background-image: url("../img/b3_img_dark.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6px;
+      padding: 1rem !important;
+    }
+  
+    .about_content span {
+      color: white !important;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+  
+    .about_features {
+      justify-content: center !important;
+      flex-direction: column;
+      align-items: center !important;
+      flex-wrap: wrap;
+    }
+  
+    .about_features span {
+      margin-right: 0.5rem !important;
+    }
+  
+    .about_img {
+      display: none;
+    }
+  
+    .about_header,
+    .about_features,
+    .about_btns {
+      margin: 1rem auto !important;
+    }
+  
+    .about_text {
+      margin: 1rem auto !important;
+    }
+  
+    .about_btns button{
+      margin: 0.5rem 0;
+    }
+  }
+  

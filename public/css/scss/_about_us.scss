@@ -1,0 +1,147 @@
+main {
+    margin-top: 8rem;
+}
+
+.title_about {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.75rem;
+    letter-spacing: 0.02em;
+    color: #292929;
+    margin: 3rem 0;
+}
+
+.about_block {
+    margin: 2rem 0;
+}
+
+.block_title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 2.75rem;
+    letter-spacing: 0.02em;
+    margin: 0.5rem 0;
+}
+
+.color1 {
+    color: #8584e2;
+}
+
+.color2 {
+    color: #ee5c4c;
+}
+
+.color3 {
+    color: #47c171;
+}
+
+.block_text {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 0.02em;
+    color: #292929;
+    margin: 0.5rem 0;
+}
+
+.about_yellow {
+    position: absolute;
+    width: 337px;
+    height: 337px;
+    left: -229px;
+    top: 435px;
+}
+
+.about_contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background: #ffffff;
+    box-shadow: 2px 5px 40px rgba(227, 230, 236, 0.85);
+    border-radius: 4px;
+    margin: 2rem auto 3rem auto;
+}
+
+.contact_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 1rem;
+    padding: 0 1rem;
+}
+
+.contact_line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.75rem 0;
+}
+
+.contact_line a {
+    margin-left: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.02em;
+    color: #000000;
+    text-decoration: none;
+}
+
+.contact_line a:hover {
+    text-decoration: underline;
+}
+
+.contact_line div {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 1100px) {
+    .title_about {
+        font-size: 1.8rem !important;
+    }
+
+    .about_contacts {
+        flex-wrap: wrap;
+        /* width: 50%; */
+    }
+
+    .contact_block {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .contact_line {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 700px) {
+    .about_contacts {
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .contact_block {
+        width: 90%;
+    }
+
+    main {
+        margin: 0 2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .about_contacts {
+        padding: 0 !important;
+    }
+
+    .contact_line a {
+        font-size: 0.8rem !important;
+    }
+}

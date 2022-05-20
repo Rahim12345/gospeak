@@ -1,0 +1,207 @@
+#purchase {
+  .purchase-container {
+    margin: 8rem 0 4rem 0;
+  }
+
+  .personal_data_sales {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    background: #ffffff;
+    box-shadow: 2px 5px 40px rgba(227, 230, 236, 0.85);
+    border-radius: 5px;
+    margin: 24px auto;
+  }
+
+  .pdata_head_sales {
+    font-weight: 600;
+
+    font-size: 20px;
+
+    line-height: 32px;
+    letter-spacing: 0.02em;
+
+    color: #292929;
+  }
+  .about_features {
+    margin: 1rem 0 !important;
+  }
+
+  .ab_feature {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    color: #292929 !important;
+  }
+
+  .ab_feature img {
+    margin-right: 0.5rem !important;
+  }
+
+  .title_sales {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    color: #292929;
+  }
+
+  .purchase-input,
+  form select {
+    width: 100%;
+    height: 3.5rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border: none;
+    margin: 12px 0;
+  }
+
+  input[type="checkbox"] {
+    margin: unset !important;
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .form-split {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 992px) {
+    .form-split input,
+    .form-split select {
+      width: 49% !important;
+    }
+  }
+
+  .b7_fcheckbox {
+    display: flex;
+
+    align-items: flex-start;
+    width: 2rem;
+    margin: 24px 0;
+  }
+  .cena_ {
+    font-weight: 600;
+    font-size: 20px;
+
+    line-height: 32px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 0.02em;
+    color: #47c171;
+    margin: 24px 0;
+  }
+
+  .tarif {
+    font-size: 1rem !important;
+  }
+
+  .kupit {
+    display: none;
+
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+
+    padding: 18px 40px;
+
+    background: #ffd41d;
+
+    opacity: 0.8;
+
+    border-radius: 4px;
+
+    margin: 24px 0;
+
+    border: none;
+  }
+  .b1_flabel {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    color: #292929;
+  }
+
+  .price-container {
+    display: flex;
+  }
+
+  .cena {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    /* or 160% */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+
+    /* GoEnglish/Black */
+    color: #292929;
+    margin: 24px 0;
+  }
+
+  .kupit_t {
+    top: calc(50% - 20px / 2);
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #292929;
+  }
+
+  .b1_yleft {
+    position: absolute;
+    width: 337px;
+    height: 337px;
+    left: -209px;
+    top: 435px;
+    z-index: -99;
+  }
+
+  .b5_15 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 2.75rem;
+    /* identical to box height, or 183% */
+
+    letter-spacing: 0.02em;
+    text-decoration-line: line-through;
+
+    /* GoEnglish/Black */
+
+    color: #292929;
+  }
+  .b5_16 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 2.75rem;
+    /* identical to box height, or 183% */
+    letter-spacing: 0.02em;
+
+    /* GoEnglish/green */
+    color: #47c171;
+    display: inline-block;
+  }
+  .b5_0 {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.02em;
+    color: #292929;
+    /* margin: 10px 4px; */
+  }
+  .b01 {
+    text-decoration-line: line-through;
+  }
+
+  @media (max-width: 992px) {
+    .pdata_head_sales {
+      text-align: center;
+    }
+  }
+}

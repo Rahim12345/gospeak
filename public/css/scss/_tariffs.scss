@@ -1,0 +1,150 @@
+.tariffs {
+    margin: 5rem 0;
+}
+
+.tariff_card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: #ffffff !important;
+    width: calc(100% / 3 - 2rem);
+    opacity: 0.8;
+    border: 3px solid #8584e2;
+    box-sizing: border-box;
+    box-shadow: 2px 5px 40px rgba(227, 230, 236, 0.85);
+    border-radius: 4px;
+    margin: 0 1rem;
+    height: max-content;
+}
+
+.tariff_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tariff_header {
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 2.75rem;
+    letter-spacing: 0.02em;
+    color: #ee5c4c;
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: end;
+}
+
+.tariff_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 40px;
+    width: 100%;
+
+    background: #ffd41d;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 20px;
+    text-align: center;
+
+    letter-spacing: 0.02em;
+    color: #292929;
+
+    border: none;
+    margin: 1rem auto;
+}
+
+.tariff_content .b5_0 {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.02em;
+    color: #292929;
+    margin: 7px 0;
+}
+
+.red_highlight {
+    color: #f17d70;
+}
+
+.b01 {
+    text-decoration-line: line-through;
+}
+
+.b5_15 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2.75rem;
+
+    letter-spacing: 0.02em;
+    text-decoration-line: line-through;
+
+    color: #292929;
+}
+
+.b5_16 {
+    display: inline-block;
+
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 2.75rem;
+    /* identical to box height, or 183% */
+    letter-spacing: 0.02em;
+
+    /* GoEnglish/green */
+    color: #47c171;
+    display: inline-block;
+}
+
+.green_highlight {
+    color: #6bcd8d;
+}
+
+.tariff_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.tariff_content span {
+    width: 100%;
+}
+
+.tariff_mark {
+    color: #b6b6bd;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.tariff_text {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.t_head {
+    margin: 2rem 0;
+}
+
+@media (max-width: 992px) {
+    .tariff_items {
+        justify-content: center;
+    }
+
+    .tariff_card {
+        margin: 2rem auto;
+        width: 100%;
+        padding: 0.5rem !important;
+    }
+
+    .tariff_header {
+        flex-direction: column;
+    }
+
+    .tariff_content {
+        margin: 0.5rem auto;
+        width: 80%;
+    }
+}
