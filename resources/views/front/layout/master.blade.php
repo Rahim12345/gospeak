@@ -30,8 +30,8 @@
           rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="img/logo-without text.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <link rel="shortcut icon" href="{{ asset('img/logo-without text.svg') }}" type="image/x-icon">
     <!-- Meta Pixel Code -->
     <script>
         ! function (f, b, e, v, n, t, s) {
@@ -58,7 +58,7 @@
     <noscript><img height="1" width="1" style="display:none"
                    src="https://www.facebook.com/tr?id=1315496612305308&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
-
+    @toastr_css
     @yield('css')
 </head>
 
@@ -73,14 +73,6 @@
 @yield('content')
 
 @include('front.includes.footer')
-@include('front.includes.tesekkur-edirik')
-
-<div class="overlay js-overlay-modal"></div>
-<script type="text/javascript" src="js/footer.js"></script>
-<script type="text/javascript" src="js/main_page.js"></script>
-<script type="text/javascript" src="js/valute.js"></script>
-<script type="text/javascript" src="js/counter.js"></script>
-@yield('js')
 </body>
 
 </html>

@@ -19,15 +19,13 @@
                 <span class="b5_12 b5_0 b01">{!! __('home.kursda_olmayan_movzular') !!}</span>
                 <span class="b5_13 b5_0 b01">{!! __('home.mentorla_vip_sohbet') !!}</span>
                 <span class="b5_14 b5_0 b01">{!! __('home.muellimle_ferdi_ders') !!}</span>
-                <span id="cena_basic" class="b5_15 b5_0"><span class="b5_16 green_hightlight">59
-                                    AZN</span></span>
-                <button class="b5_basic_btn btn_yellow tariff_btn" onClick="zapisatsa()">{!! __('home.almaq') !!}</button>
+                <span class="b5_15 b5_0"><span class="b5_16 green_hightlight">{{ __('home.basic_'.session('valyuta')) }}</span></span>
+                <button class="b5_basic_btn btn_yellow tariff_btn" onClick="window.location.href='{!! route('front.purchase',['paket'=>'basic']) !!}'">{!! __('home.almaq') !!}</button>
             </div>
         </div>
         <div class="b5_con2 tariff_card col-md-12 col-sm-12 col-12 py-5" id="b5con2">
             <div class="b5_con2t b5_content tariff_content" id="b5con2t">
-                <div class="b5_content2_header tariff_header">{!! __('home.standart') !!}<span class="tariff_mark"> Tövsiyə
-                                    olunan paket</span></div>
+                <div class="b5_content2_header tariff_header">{!! __('home.standart') !!}<span class="tariff_mark"> {{ __('home.tovsiye_olunan') }}</span></div>
                 <span class="b5_1 b5_0 ">{!! __('home.1_ay_tedris') !!}</span>
                 <span class="b5_2 b5_0">{!! __('home.45_video_ders') !!}</span>
                 <span class="b5_3 b5_0">{!! __('home.80_materiallar') !!}</span>
@@ -43,8 +41,8 @@
                 <span class="b5_12 b5_0 b01">{!! __('home.kursda_olmayan_movzular') !!}</span>
                 <span class="b5_13 b5_0 b01">{!! __('home.mentorla_vip_sohbet') !!}</span>
                 <span class="b5_14 b5_0 b01">{!! __('home.muellimle_ferdi_ders') !!}</span>
-                <span id="cena_standart" class="b5_15 b5_0"><span class="b5_16"> 79 AZN</span></span>
-                <button class="b5_standart_btn btn_yellow tariff_btn" onClick="zapisatsa()">{!! __('home.almaq') !!}</button>
+                <span class="b5_15 b5_0"><span class="b5_16"> {{ __('home.standart_'.session('valyuta')) }}</span></span>
+                <button class="b5_standart_btn btn_yellow tariff_btn" onClick="window.location.href='{!! route('front.purchase',['paket'=>'standart']) !!}'">{!! __('home.almaq') !!}</button>
             </div>
         </div>
         <div class="b5_con3 tariff_card col-md-12 col-sm-12 col-12" id="b5con3">
@@ -66,9 +64,8 @@
                 <span class="b5_12 b5_0">{!! __('home.kursda_olmayan_movzular') !!}</span>
                 <span class="b5_13 b5_0">{!! __('home.mentorla_vip_sohbet') !!}</span>
                 <span class="b5_14 b5_0">{!! __('home.muellimle_ferdi_ders') !!}</span>
-                <span id="cena_pro" class="b5_15 b5_0"><span class="b5_16 green_highlight">119
-                                    AZN</span></span>
-                <button class="b5_pro_btn btn_yellow tariff_btn" onClick="zapisatsa()">{!! __('home.almaq') !!}</button>
+                <span class="b5_15 b5_0"><span class="b5_16 green_highlight">{{ __('home.pro_'.session('valyuta')) }}</span></span>
+                <button class="b5_pro_btn btn_yellow tariff_btn" onClick="window.location.href='{!! route('front.purchase',['paket'=>'pro']) !!}'">{!! __('home.almaq') !!}</button>
             </div>
         </div>
     </div>
@@ -85,8 +82,8 @@
             <span class="b5_3 b5_0">{!! __('home.3_material') !!}</span>
             <span class="b5_4 b5_0">{!! __('home.1_ev_tapsirigin') !!}</span>
             <span class="b5_6 b5_0">{!! __('home.umumi_chat') !!}</span>
-            <span id="cena_trial" class="b5_15 b5_0"><span class="b5_16 green_highlight">9 AZN</span></span>
-            <button class="b5_trial_btn btn_yellow tariff_btn" onClick="zapisatsa()">{!! __('home.almaq') !!}</button>
+            <span class="b5_15 b5_0"><span class="b5_16 green_highlight">{{ __('home.trial_'.session('valyuta')) }}</span></span>
+            <button class="b5_trial_btn btn_yellow tariff_btn" onClick="window.location.href='{!! route('front.purchase',['paket'=>'trial']) !!}'">{!! __('home.almaq') !!}</button>
         </div>
     </div>
 </div>

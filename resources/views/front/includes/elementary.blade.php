@@ -16,8 +16,8 @@
                 <span class="ab_feature"><img src="img/Star.svg" /> {!! __('home.ferdi_yanasma') !!}</span>
             </div>
             <span class="about_btns">
-                            <button class="b3_zp about_signup btn_yellow" onClick="zapisatsa()">{!! __('home.qeydiyyatdan_kecmek') !!}</button>
-                            <button class="b3_about about_info btn_white" onClick="about_course()">{!! __('home.etrafli') !!}</button>
+                            <button class="b3_zp about_signup btn_yellow" onClick="window.location.href='/purchase'">{!! __('home.qeydiyyatdan_kecmek') !!}</button>
+                            <button class="b3_about about_info btn_white" onClick="window.location.href='/about-course#tariffs'">{!! __('home.etrafli') !!}</button>
                         </span>
         </div>
         <img class="about_img col-lg-5 col-md-12 col-sm-12 col-12" src="img/b3_img.png" />

@@ -13,7 +13,7 @@
                     <span class="b1_headert">{!! __('home.ingilis_dilini_tekminlesdireciyik') !!}</span>
                     <span class="b1_text">{!! __('home.eger_ingilis_dilinde_selis_danismaq') !!}</span>
                     <span class="b1_button"><button class="main_zapisatsa btn_yellow"
-                                                    onClick="zapisatsa1()">{!! __('home.qeydiyyatdan_kecmek') !!}</button></span>
+                                                    onClick="window.location.href='/#tariffs'">{!! __('home.qeydiyyatdan_kecmek') !!}</button></span>
                 </span>
                 <span class="b1_girl col-md-6 col-sm-12 col-12"><img src="img/girl.png" /></span>
                 <span class="b1_yleft"><img src="img/yellow.svg"></span>
@@ -69,7 +69,7 @@
                         <span class="b5_con4_text">{!! __('home.aksentden_qurtul_ve_selis') !!}</span>
                     </span>
                 </div>
-                <button class="b5_about_btn btn_white" onClick="about_course()">{!! __('home.etrafli') !!}</button>
+                <button class="b5_about_btn btn_white" onClick="window.location.href='/about-course#tariffs'">{!! __('home.etrafli') !!}</button>
             </div>
             <div id="counters" class="block_6">
                 <span class="b6_content col-md-12 col-sm-12 col-12">
@@ -91,7 +91,8 @@
                     <span class="b7_text">{!! __('home.elaqe_telefon_nomrenizi') !!}</span>
                 </div>
                 <span class="b7_form col-md-5 col-sm-12 col-12">
-                    <form id="form col-md-12 col-sm-12 col-12">
+                    <form id="form col-md-12 col-sm-12 col-12" action="{{ route('sual.var') }}" onsubmit="return false" method="POST">
+                        @csrf
                         <div class="form_row col-md-12 col-sm-12 col-12">
                             <input class="col-sm-12 col-12" type="text" name="aname" value="" placeholder="{!! __('home.adiniz') !!}" autocomplete="off">
                             <input class="col-sm-12 col-12" type="text" name="anumber" value="" placeholder="{!! __('home.mobil_nomreniz') !!}" autocomplete="off">
@@ -99,7 +100,7 @@
                         <div class="checkbox_container my-2">
                             <input type="checkbox" name="acheckbox" class="b7_fcheckbox" id="checkbox1" required=""> <label for="checkbox1" class="b7_flabel ">{!! __('home.men_sexsi_melumatlarin') !!}</label>
                         </div>
-                        <input id="submitf1" type="submit" name="asubmit" value="{!! __('home.gonder') !!}" class="b7_fsubmit btn_green">
+                        <button class="b7_fsubmit btn_green" type="button">{!! __('home.gonder') !!}</button>
                     </form>
                 </span>
             </div>

@@ -11,4 +11,5 @@ return [
     'sizin_e_poctunuz'=>'Your Email',
     'copyright'=>env('APP_NAME').' Copyright '.date('Y').'.',
     'all_rights'=>'All Rights Reserved '.env('APP_NAME'),
+    'giris'=>'Sign In'
 ];

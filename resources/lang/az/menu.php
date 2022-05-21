@@ -11,4 +11,5 @@ return [
     'sizin_e_poctunuz'=>'Sizin E-poçtunuz',
     'copyright'=>env('APP_NAME').' Copyright '.date('Y').'.',
     'all_rights'=>'Bütün hüquqlar qorunur '.env('APP_NAME'),
+    'giris'=>'Giriş'
 ];
